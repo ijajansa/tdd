@@ -41,4 +41,10 @@ class StringCalculatorTest extends TestCase
         $result = $calculator->add("1\n2,3");
         $this->assertEquals(6, $result);
     }
+    public function test_custom_delimiters()
+    {
+        $calculator = new StringCalculator();
+        $result = $calculator->add("//;\n1;2");
+        $this->assertEquals(3, $result);
+    }
 }
