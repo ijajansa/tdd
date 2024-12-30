@@ -29,4 +29,10 @@ class StringCalculatorTest extends TestCase
         $calculator = new StringCalculator();
         $calculator->add("-1,-2,3");
     }
+    public function test_two_numbers()
+    {
+        $calculator = new StringCalculator();
+        $result = $calculator->add("1,2");
+        $this->assertEquals(3, $result);
+    }
 }
