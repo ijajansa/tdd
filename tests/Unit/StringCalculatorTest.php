@@ -22,4 +22,11 @@ class StringCalculatorTest extends TestCase
         $result = $calculator->add("1");
         $this->assertEquals(1, $result);
     }
+    public function test_negative()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("negative numbers not allowed: -1,-2");
+        $calculator = new StringCalculator();
+        $calculator->add("-1,-2,3");
+    }
 }
