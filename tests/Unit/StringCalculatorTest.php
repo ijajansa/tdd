@@ -35,4 +35,10 @@ class StringCalculatorTest extends TestCase
         $result = $calculator->add("1,2");
         $this->assertEquals(3, $result);
     }
+    public function test_new_line_delimeter()
+    {
+        $calculator = new StringCalculator();
+        $result = $calculator->add("1\n2,3");
+        $this->assertEquals(6, $result);
+    }
 }

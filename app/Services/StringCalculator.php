@@ -9,6 +9,7 @@ class StringCalculator
         if ($numbers === "") {
             return 0;
         }
+        $numbers = str_replace("\n", ",", $numbers);
         $nums = explode(",", $numbers);
         $negatives = array_filter($nums, fn($n) => (int)$n < 0);
         if (!empty($negatives)) {
